@@ -27,3 +27,10 @@ This example is a [NextJS](https://nextjs.org/) todo app that uses
 - Install packages with `yarn`
 - Connect to your Railway project with `railway link`
 - Run the NextJS app `yarn start`
+
+### Generating/using new GraphQL queries and hooks
+
+1. Add queries into .graphql files in `src/graphql/**`
+1. Run `yarn codegen` to generate the types and hooks
+1. Import the hook into your component
+1. Have loads of fun calling data

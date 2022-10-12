@@ -4,12 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn migrate:deploy && next build",
+    "build": "next build",
     "start": "railway run yarn dev",
     "connect": "railway connect",
-    "migrate:dev": "prisma migrate dev",
-    "migrate:deploy": "prisma migrate deploy",
-    "migrate:status": "prisma migrate status",
     "generate": "prisma generate",
     "codegen": "yarn generate && graphql-codegen --config ./codegen.ts"
   },
