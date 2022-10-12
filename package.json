@@ -1,0 +1,52 @@
+{
+  "name": "with-nextjs-prisma",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "yarn migrate:deploy && next build",
+    "start": "railway run yarn dev",
+    "connect": "railway connect",
+    "migrate:dev": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "migrate:status": "prisma migrate status",
+    "generate": "prisma generate",
+    "codegen": "yarn generate && graphql-codegen --config ./codegen.ts"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.0",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@prisma/client": "4.3.1",
+    "apollo-server-micro": "^3.10.2",
+    "graphql": "^15.3.0",
+    "graphql-fields": "^2.0.3",
+    "micro": "^9.4.1",
+    "next": "12.1.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "reflect-metadata": "^0.1.13",
+    "swr": "^0.4.1",
+    "type-graphql": "^1.1.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/import-types-preset": "^2.1.18",
+    "@graphql-codegen/introspection": "^2.1.1",
+    "@graphql-codegen/near-operation-file-preset": "^2.2.12",
+    "@graphql-codegen/typescript": "^2.4.11",
+    "@graphql-codegen/typescript-operations": "^2.4.0",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.14",
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "prettier": "^2.7.1",
+    "prisma": "4.3.1",
+    "prisma-json-schema-generator": "^3.1.1",
+    "typegraphql-prisma": "^0.21.5",
+    "typescript": "^4.1.3"
+  },
+  "prisma": {
+    "schema": "src/graphql/prisma/schema.prisma"
+  },
+  "resolves": {
+    "graphql": "^15.3.0"
+  }
+}

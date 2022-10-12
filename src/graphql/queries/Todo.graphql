@@ -1,0 +1,35 @@
+query ListTodos($where: TodoWhereInput!) {
+  todos(where: $where) {
+    id
+    text
+    completed
+  }
+}
+query ListTodosForPage($where: TodoWhereInput!) {
+  todos(where: $where) {
+    id
+  }
+}
+
+mutation CreateTodo($data: TodoCreateInput!) {
+  createOneTodo(data: $data) {
+    id
+    text
+    completed
+  }
+}
+
+mutation UpdateTodo($where: TodoWhereUniqueInput!, $data: TodoUpdateInput!) {
+  updateOneTodo(where: $where, data: $data) {
+    id
+    text
+    completed
+  }
+}
+
+mutation DeleteTodo($where: TodoWhereUniqueInput!) {
+  deleteOneTodo(where: $where) {
+    id
+    text
+  }
+}
