@@ -99,7 +99,8 @@ function applyTypeClassEnhanceConfig(enhanceConfig, typeClass, typePrototype, ty
     }
 }
 const modelsInfo = {
-    Todo: ["id", "createdAt", "text", "completed"]
+    Todo: ["id", "createdAt", "text", "completed", "data"],
+    Data: ["test"]
 };
 function applyModelsEnhanceMap(modelsEnhanceMap) {
     for (const modelsEnhanceMapKey of Object.keys(modelsEnhanceMap)) {
@@ -130,34 +131,42 @@ function applyOutputTypesEnhanceMap(outputTypesEnhanceMap) {
 }
 exports.applyOutputTypesEnhanceMap = applyOutputTypesEnhanceMap;
 const inputsInfo = {
-    TodoWhereInput: ["AND", "OR", "NOT", "id", "createdAt", "text", "completed"],
-    TodoOrderByWithRelationInput: ["id", "createdAt", "text", "completed"],
+    TodoWhereInput: ["AND", "OR", "NOT", "id", "createdAt", "text", "completed", "data"],
+    TodoOrderByWithRelationInput: ["id", "createdAt", "text", "completed", "data"],
     TodoWhereUniqueInput: ["id"],
     TodoOrderByWithAggregationInput: ["id", "createdAt", "text", "completed", "_count", "_max", "_min"],
     TodoScalarWhereWithAggregatesInput: ["AND", "OR", "NOT", "id", "createdAt", "text", "completed"],
-    TodoCreateInput: ["id", "createdAt", "text", "completed"],
-    TodoUpdateInput: ["createdAt", "text", "completed"],
-    TodoCreateManyInput: ["id", "createdAt", "text", "completed"],
-    TodoUpdateManyMutationInput: ["createdAt", "text", "completed"],
+    TodoCreateInput: ["id", "createdAt", "text", "completed", "data"],
+    TodoUpdateInput: ["createdAt", "text", "completed", "data"],
+    TodoCreateManyInput: ["id", "createdAt", "text", "completed", "data"],
+    TodoUpdateManyMutationInput: ["createdAt", "text", "completed", "data"],
     StringFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "contains", "startsWith", "endsWith", "mode", "not"],
     DateTimeFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not"],
     BoolFilter: ["equals", "not"],
+    DataCompositeFilter: ["equals", "is", "isNot"],
+    DataObjectEqualityInput: ["test"],
+    DataOrderByInput: ["test"],
     TodoCountOrderByAggregateInput: ["id", "createdAt", "text", "completed"],
     TodoMaxOrderByAggregateInput: ["id", "createdAt", "text", "completed"],
     TodoMinOrderByAggregateInput: ["id", "createdAt", "text", "completed"],
     StringWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "contains", "startsWith", "endsWith", "mode", "not", "_count", "_min", "_max"],
     DateTimeWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not", "_count", "_min", "_max"],
     BoolWithAggregatesFilter: ["equals", "not", "_count", "_min", "_max"],
+    DataCreateEnvelopeInput: ["set"],
+    DataCreateInput: ["test"],
     DateTimeFieldUpdateOperationsInput: ["set"],
     StringFieldUpdateOperationsInput: ["set"],
     BoolFieldUpdateOperationsInput: ["set"],
+    DataUpdateEnvelopeInput: ["set", "update"],
     NestedStringFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "contains", "startsWith", "endsWith", "not"],
     NestedDateTimeFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not"],
     NestedBoolFilter: ["equals", "not"],
+    DataWhereInput: ["AND", "OR", "NOT", "test"],
     NestedStringWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "contains", "startsWith", "endsWith", "not", "_count", "_min", "_max"],
     NestedIntFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not"],
     NestedDateTimeWithAggregatesFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not", "_count", "_min", "_max"],
-    NestedBoolWithAggregatesFilter: ["equals", "not", "_count", "_min", "_max"]
+    NestedBoolWithAggregatesFilter: ["equals", "not", "_count", "_min", "_max"],
+    DataUpdateInput: ["test"]
 };
 function applyInputTypesEnhanceMap(inputTypesEnhanceMap) {
     for (const inputTypeEnhanceMapKey of Object.keys(inputTypesEnhanceMap)) {

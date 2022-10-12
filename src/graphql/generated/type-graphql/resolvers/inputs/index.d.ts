@@ -1,6 +1,14 @@
 export { BoolFieldUpdateOperationsInput } from "./BoolFieldUpdateOperationsInput";
 export { BoolFilter } from "./BoolFilter";
 export { BoolWithAggregatesFilter } from "./BoolWithAggregatesFilter";
+export { DataCompositeFilter } from "./DataCompositeFilter";
+export { DataCreateEnvelopeInput } from "./DataCreateEnvelopeInput";
+export { DataCreateInput } from "./DataCreateInput";
+export { DataObjectEqualityInput } from "./DataObjectEqualityInput";
+export { DataOrderByInput } from "./DataOrderByInput";
+export { DataUpdateEnvelopeInput } from "./DataUpdateEnvelopeInput";
+export { DataUpdateInput } from "./DataUpdateInput";
+export { DataWhereInput } from "./DataWhereInput";
 export { DateTimeFieldUpdateOperationsInput } from "./DateTimeFieldUpdateOperationsInput";
 export { DateTimeFilter } from "./DateTimeFilter";
 export { DateTimeWithAggregatesFilter } from "./DateTimeWithAggregatesFilter";

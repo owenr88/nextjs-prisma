@@ -5,6 +5,7 @@ exports.TodoWhereInput = void 0;
 const tslib_1 = require("tslib");
 const TypeGraphQL = tslib_1.__importStar(require("type-graphql"));
 const BoolFilter_1 = require("../inputs/BoolFilter");
+const DataCompositeFilter_1 = require("../inputs/DataCompositeFilter");
 const DateTimeFilter_1 = require("../inputs/DateTimeFilter");
 const StringFilter_1 = require("../inputs/StringFilter");
 let TodoWhereInput = TodoWhereInput_1 = class TodoWhereInput {
@@ -51,6 +52,12 @@ tslib_1.__decorate([
     }),
     tslib_1.__metadata("design:type", BoolFilter_1.BoolFilter)
 ], TodoWhereInput.prototype, "completed", void 0);
+tslib_1.__decorate([
+    TypeGraphQL.Field(_type => DataCompositeFilter_1.DataCompositeFilter, {
+        nullable: true
+    }),
+    tslib_1.__metadata("design:type", DataCompositeFilter_1.DataCompositeFilter)
+], TodoWhereInput.prototype, "data", void 0);
 TodoWhereInput = TodoWhereInput_1 = tslib_1.__decorate([
     TypeGraphQL.InputType("TodoWhereInput", {
         isAbstract: true
