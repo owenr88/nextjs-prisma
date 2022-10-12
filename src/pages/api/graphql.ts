@@ -12,8 +12,19 @@ export const config = {
   },
 };
 
+// const url = process.env.MONGO_URL;
+// const db = process.env.DATBASE_NAME;
+
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const prisma = new PrismaClient();
+  // if (!url || !db) throw new Error('No database to connect to');
+
+  const prisma = new PrismaClient({
+    // datasources: {
+    //   db: {
+    //     url: `${url}/${db}?authSource=admin`,
+    //   },
+    // },
+  });
 
   const apolloServer = new ApolloServer({
     schema,
