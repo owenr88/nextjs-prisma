@@ -8,7 +8,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     // get all todos
     const todos = await prisma.todo.findMany({
       orderBy: { createdAt: 'desc' },
-      select: { id: false },
     });
     res.json(todos);
   } else if (req.method === 'POST') {
