@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "mongodb"
-  url      = env("DATABASE_URL")
+  url      = env("MONGO_URL")
 }
 
 generator client {
@@ -17,14 +17,9 @@ generator typegraphql {
   emitTranspiledCode = true
 }
 
-type Data {
-  test String
-}
-
 model Todo {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   createdAt DateTime @default(now())
   text      String
   completed Boolean
-  data      Data
 }
