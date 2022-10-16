@@ -39,8 +39,12 @@ export const TodoList: React.FC = () => {
 };
 
 const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => {
-  const [updateTodo] = useUpdateTodoMutation();
-  const [deleteTodo] = useDeleteTodoMutation();
+  const [updateTodo] = useUpdateTodoMutation({
+    refetchQueries: ['ListTodos'],
+  });
+  const [deleteTodo] = useDeleteTodoMutation({
+    refetchQueries: ['ListTodos'],
+  });
   return (
     <li className={styles.todo}>
       <label
@@ -88,7 +92,9 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => {
 
 const AddTodoInput = () => {
   const [text, setText] = useState('');
-  const [createTodo] = useCreateTodoMutation();
+  const [createTodo] = useCreateTodoMutation({
+    refetchQueries: ['ListTodos'],
+  });
 
   return (
     <form
@@ -128,7 +134,7 @@ const Home: NextPage = () => {
       <header className={styles.header}>
         <h1 className={styles.title}>Todos</h1>
         <h2 className={styles.desc}>
-          NextJS app connected to Postgres using Prisma and hosted on{' '}
+          NextJS app connected to MongoDB using Prisma and hosted on{' '}
           <a href="https://railway.app">Railway</a>
         </h2>
       </header>
