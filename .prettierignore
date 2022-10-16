@@ -1,0 +1,8 @@
+# Add files here to ignore them from prettier formatting
+
+/.next
+/.netlify
+/node_modules
+/dist
+/coverage
+/node_modules
