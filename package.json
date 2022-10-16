@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "railway run next build",
+    "build": "next build",
     "start": "railway run yarn dev",
     "connect": "railway connect",
     "generate": "prisma generate",
