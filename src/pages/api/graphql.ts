@@ -15,13 +15,19 @@ export const config = {
 // const url = process.env.MONGO_URL;
 // const db = process.env.DATBASE_NAME;
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+// console.log(process.env);
+
+const main = async (req: NextApiRequest, res: NextApiResponse) => {
   // if (!url || !db) throw new Error('No database to connect to');
 
+  // const datasource = `${url}/${db}?authSource=admin&retryWrites=true&w=majority&directConnection=true&replicaSet=rs1`;
+  // console.log(datasource);
+
   const prisma = new PrismaClient({
+    // Add more configurations to the Mongo URL
     // datasources: {
     //   db: {
-    //     url: `${url}/${db}?authSource=admin`,
+    //     url: datasource,
     //   },
     // },
   });
@@ -34,3 +40,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   await apolloServer.start();
   return apolloServer.createHandler({ path: '/api/graphql' })(req, res);
 };
+
+export default main;

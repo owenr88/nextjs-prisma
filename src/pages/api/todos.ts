@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const main = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     // get all todos
     const todos = await prisma.todo.findMany({
@@ -36,3 +36,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.json({ status: 'ok' });
   }
 };
+
+export default main;

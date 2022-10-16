@@ -1,4 +1,4 @@
-export * from "./pages/api/graphql/generated/type-graphql";
+export * from './graphql/generated/type-graphql';
 
 export interface Todo {
   id: string;

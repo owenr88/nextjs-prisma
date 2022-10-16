@@ -49,49 +49,6 @@ export type BoolWithAggregatesFilter = {
   not?: InputMaybe<NestedBoolWithAggregatesFilter>;
 };
 
-export type Data = {
-  __typename?: 'Data';
-  test: Scalars['String'];
-};
-
-export type DataCompositeFilter = {
-  equals?: InputMaybe<DataObjectEqualityInput>;
-  is?: InputMaybe<DataWhereInput>;
-  isNot?: InputMaybe<DataWhereInput>;
-};
-
-export type DataCreateEnvelopeInput = {
-  set?: InputMaybe<DataCreateInput>;
-};
-
-export type DataCreateInput = {
-  test: Scalars['String'];
-};
-
-export type DataObjectEqualityInput = {
-  test: Scalars['String'];
-};
-
-export type DataOrderByInput = {
-  test?: InputMaybe<SortOrder>;
-};
-
-export type DataUpdateEnvelopeInput = {
-  set?: InputMaybe<DataCreateInput>;
-  update?: InputMaybe<DataUpdateInput>;
-};
-
-export type DataUpdateInput = {
-  test?: InputMaybe<StringFieldUpdateOperationsInput>;
-};
-
-export type DataWhereInput = {
-  AND?: InputMaybe<Array<DataWhereInput>>;
-  NOT?: InputMaybe<Array<DataWhereInput>>;
-  OR?: InputMaybe<Array<DataWhereInput>>;
-  test?: InputMaybe<StringFilter>;
-};
-
 export type DateTimeFieldUpdateOperationsInput = {
   set?: InputMaybe<Scalars['DateTime']>;
 };
@@ -343,7 +300,6 @@ export type Todo = {
   __typename?: 'Todo';
   completed: Scalars['Boolean'];
   createdAt: Scalars['DateTime'];
-  data: Data;
   id: Scalars['String'];
   text: Scalars['String'];
 };
@@ -367,7 +323,6 @@ export type TodoCountOrderByAggregateInput = {
 export type TodoCreateInput = {
   completed: Scalars['Boolean'];
   createdAt?: InputMaybe<Scalars['DateTime']>;
-  data: DataCreateEnvelopeInput;
   id?: InputMaybe<Scalars['String']>;
   text: Scalars['String'];
 };
@@ -375,7 +330,6 @@ export type TodoCreateInput = {
 export type TodoCreateManyInput = {
   completed: Scalars['Boolean'];
   createdAt?: InputMaybe<Scalars['DateTime']>;
-  data: DataCreateEnvelopeInput;
   id?: InputMaybe<Scalars['String']>;
   text: Scalars['String'];
 };
@@ -434,7 +388,6 @@ export type TodoOrderByWithAggregationInput = {
 export type TodoOrderByWithRelationInput = {
   completed?: InputMaybe<SortOrder>;
   createdAt?: InputMaybe<SortOrder>;
-  data?: InputMaybe<DataOrderByInput>;
   id?: InputMaybe<SortOrder>;
   text?: InputMaybe<SortOrder>;
 };
@@ -459,14 +412,12 @@ export type TodoScalarWhereWithAggregatesInput = {
 export type TodoUpdateInput = {
   completed?: InputMaybe<BoolFieldUpdateOperationsInput>;
   createdAt?: InputMaybe<DateTimeFieldUpdateOperationsInput>;
-  data?: InputMaybe<DataUpdateEnvelopeInput>;
   text?: InputMaybe<StringFieldUpdateOperationsInput>;
 };
 
 export type TodoUpdateManyMutationInput = {
   completed?: InputMaybe<BoolFieldUpdateOperationsInput>;
   createdAt?: InputMaybe<DateTimeFieldUpdateOperationsInput>;
-  data?: InputMaybe<DataUpdateEnvelopeInput>;
   text?: InputMaybe<StringFieldUpdateOperationsInput>;
 };
 
@@ -476,7 +427,6 @@ export type TodoWhereInput = {
   OR?: InputMaybe<Array<TodoWhereInput>>;
   completed?: InputMaybe<BoolFilter>;
   createdAt?: InputMaybe<DateTimeFilter>;
-  data?: InputMaybe<DataCompositeFilter>;
   id?: InputMaybe<StringFilter>;
   text?: InputMaybe<StringFilter>;
 };

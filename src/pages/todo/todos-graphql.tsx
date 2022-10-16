@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
-import styles from '../styles/Home.module.css';
+import styles from '../../styles/Home.module.css';
 import {
   useListTodosQuery,
   useCreateTodoMutation,
@@ -20,7 +20,7 @@ export const TodoList: React.FC = () => {
       },
     },
   });
-  const todos = data.todos;
+  const todos = data?.todos ?? [];
 
   if (error != null) return <div>Error loading todos...</div>;
   if (loading) return <div>Loading...</div>;
@@ -32,7 +32,7 @@ export const TodoList: React.FC = () => {
   return (
     <ul className={styles.todoList}>
       {todos.map((todo) => (
-        <TodoItem todo={todo} />
+        <TodoItem todo={todo} key={todo.id} />
       ))}
     </ul>
   );

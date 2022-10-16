@@ -1,6 +1,5 @@
 import 'reflect-metadata';
 import { buildSchemaSync } from 'type-graphql';
-import * as path from 'path';
 import { printSchema } from 'graphql';
 
 import { resolvers } from './generated/type-graphql/index';
