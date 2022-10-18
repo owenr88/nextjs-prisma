@@ -441,6 +441,13 @@ export type TodoWhereUniqueInput = {
   id?: InputMaybe<Scalars['String']>;
 };
 
+export type GetThingQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetThingQuery = {
+  __typename?: 'Query';
+  getThing?: { __typename?: 'Thing'; thing: string } | null;
+};
+
 export type ListTodosQueryVariables = Exact<{
   where: TodoWhereInput;
 }>;

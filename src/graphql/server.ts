@@ -1,4 +1,5 @@
 import { ApolloServer } from 'apollo-server-micro';
+import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core';
 import { PrismaClient } from '@prisma/client';
 
 import { schema } from './schema';
@@ -14,6 +15,7 @@ export const getServer = () => {
 
   const apolloServer = new ApolloServer({
     schema,
+    plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
     context: (): Context => ({ prisma }),
   });
 

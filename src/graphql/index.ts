@@ -7,4 +7,6 @@ export * from './client';
  * - Running middleware on the server to detect authentication
  * - Logging middleware
  * - NextAuth on the backend
+ * - File storage
+ * - i18n
  */

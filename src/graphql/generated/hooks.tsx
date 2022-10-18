@@ -4,6 +4,61 @@ import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 
+export const GetThingDocument = gql`
+  query GetThing {
+    getThing {
+      thing
+    }
+  }
+`;
+
+/**
+ * __useGetThingQuery__
+ *
+ * To run a query within a React component, call `useGetThingQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetThingQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetThingQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetThingQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    Types.GetThingQuery,
+    Types.GetThingQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<Types.GetThingQuery, Types.GetThingQueryVariables>(
+    GetThingDocument,
+    options
+  );
+}
+export function useGetThingLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    Types.GetThingQuery,
+    Types.GetThingQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<Types.GetThingQuery, Types.GetThingQueryVariables>(
+    GetThingDocument,
+    options
+  );
+}
+export type GetThingQueryHookResult = ReturnType<typeof useGetThingQuery>;
+export type GetThingLazyQueryHookResult = ReturnType<
+  typeof useGetThingLazyQuery
+>;
+export type GetThingQueryResult = Apollo.QueryResult<
+  Types.GetThingQuery,
+  Types.GetThingQueryVariables
+>;
 export const ListTodosDocument = gql`
   query ListTodos($where: TodoWhereInput!) {
     todos(where: $where) {

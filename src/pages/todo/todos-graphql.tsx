@@ -8,9 +8,21 @@ import {
   useUpdateTodoMutation,
   useDeleteTodoMutation,
   ListTodosQueryResult,
+  useGetThingQuery,
 } from '../../graphql';
 
 type Todo = ListTodosQueryResult['data']['todos'][0];
+
+const Thing: React.FC = () => {
+  const { data, error, loading } = useGetThingQuery();
+  return (
+    <p>
+      <i>
+        {loading ? 'Getting thing...' : 'Got thing: ' + data?.getThing?.thing}
+      </i>
+    </p>
+  );
+};
 
 export const TodoList: React.FC = () => {
   const { data, loading, error } = useListTodosQuery({
@@ -143,6 +155,8 @@ const Home: NextPage = () => {
         <AddTodoInput />
 
         <TodoList />
+
+        <Thing />
       </main>
     </div>
   );
