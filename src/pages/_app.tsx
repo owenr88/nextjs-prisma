@@ -1,14 +1,18 @@
-import { ApolloProvider } from "@apollo/client";
+import { ApolloProvider } from '@apollo/client';
 
-import client from "../graphql/client";
+import { SessionProvider } from 'next-auth/react';
 
-import "../styles/globals.css";
+import client from '../graphql/client';
 
-function MyApp({ Component, pageProps }) {
+import '../styles/globals.css';
+
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
-    <ApolloProvider client={client}>
-      <Component {...pageProps} />
-    </ApolloProvider>
+    <SessionProvider session={session}>
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </SessionProvider>
   );
 }
 
