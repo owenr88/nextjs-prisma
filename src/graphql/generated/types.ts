@@ -205,6 +205,7 @@ export type Query = {
   __typename?: 'Query';
   aggregateTodo: AggregateTodo;
   findFirstTodo?: Maybe<Todo>;
+  getThing?: Maybe<Thing>;
   groupByTodo: Array<TodoGroupBy>;
   todo?: Maybe<Todo>;
   todos: Array<Todo>;
@@ -294,6 +295,11 @@ export type StringWithAggregatesFilter = {
   not?: InputMaybe<NestedStringWithAggregatesFilter>;
   notIn?: InputMaybe<Array<Scalars['String']>>;
   startsWith?: InputMaybe<Scalars['String']>;
+};
+
+export type Thing = {
+  __typename?: 'Thing';
+  thing: Scalars['String'];
 };
 
 export type Todo = {

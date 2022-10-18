@@ -3,10 +3,10 @@ import { buildSchemaSync } from 'type-graphql';
 import { printSchema } from 'graphql';
 
 import { resolvers } from './generated/type-graphql/index';
+import CustomResolvers from './custom-resolvers';
 
-// Need to figure out how to add custom resolvers here
 export const schema = buildSchemaSync({
-  resolvers,
+  resolvers: [...resolvers, ...CustomResolvers],
   validate: false,
 });
 
